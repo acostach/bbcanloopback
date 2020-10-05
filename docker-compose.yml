@@ -1,0 +1,10 @@
+version: '2'
+services:
+  myapp:
+    build: ./myapp
+    privileged: true
+    network_mode: host
+    cap_add:
+        - NET_ADMIN # allow container to change network settings
+    environment:
+        - 'UDEV=on'
